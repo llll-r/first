@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       [v-cloak]{
+           display: none;
+       }
+   </style>
+</head>
+<body>
+<div id="app">
+    <p v-cloak>{{msg}}dddddd</p>
+    <p v-html="msg2"></p>
+    <div v-html="msg2">=====</div>
+    <input type="button" value="按钮" v-bind:title="mytitle">
+    <input type="button" value="按钮" :title="mytitle">
+    <hr>
+    <!-- v-bind是绑定属性的指令 
+        v-bind可以被简写为：-->
+    <input type="button" value="v-on" v-on:click="show">
+    
+        <!-- v-on是事件绑定机制 , 可以被简写为@-->
+</div>
+
+
+<script src="./lib/vue-2.4.0.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{ 
+                msg:"hhh",
+                msg2:"<h1>我是h1</h1>",
+                mytitle:"这是自己定义的一个title"
+            },
+            methods:{
+                show: function() {
+                    alert("你好")
+                }
+            }
+        })
+    </script>
+</body>
+</html>

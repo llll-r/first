@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+   <div id="app">
+    <tmp @func="show" ></tmp>
+   </div>
+   <template id="temp1">
+       <div>
+        <input type="button" value="调用父方法"  @click=myclick>
+        <h3>这是通过tempid创建的组件</h3>
+       </div>
+   </template>
+    <script>
+
+            var tmp = {
+            template:"#temp1",
+            methods:{
+                myclick(){
+                    this.$emit("func")
+                }
+            }
+        }
+        var vm = new Vue({
+            el:"#app",
+            data:{
+
+            },
+            components:{
+                tmp :tmp
+            },
+            methods:{
+                show(){
+                    console.log("调用了父组件的方法");
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{msg |msgFormat("疯狂+2")}}</p>
+</div>
+<script>
+    Vue.filter("msgFormat", function(msg, arg){
+        return msg.replace(/单纯/g, arg)
+    })
+
+
+    new Vue({
+        el:"#app",
+        data:{
+            msg:"曾经我是一个单纯的少年，单纯就是很单纯"
+        }
+    })
+</script>
+
+    
+
+</body>
+</html>

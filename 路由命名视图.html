@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <script src="./lib/vue-router-3.0.1.js"></script>
+</head>
+<body>
+    <div id="app">
+        <router-view></router-view>
+        <router-view name="left"></router-view>
+        <router-view name="main"></router-view>
+    </div>
+    <script>
+
+        var header = {
+            template:"<h1>header</h1>"
+        }
+        var leftBox = {
+            template:"<h1>leftBox</h1>"
+        }
+        var mainBox = {
+            template:"<h1>mainBox</h1>"
+        }
+
+        var route = new VueRouter({
+            routes:[
+                {path:"/", components:{
+                    default:header,
+                    left:leftBox,
+                    main:mainBox
+                }}
+            ]
+        })
+
+        var vm = new Vue({
+            el:"#app",
+            data:{},
+            methods:{},
+            router:route
+        })
+    </script>
+</body>
+</html>
