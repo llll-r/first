@@ -125,12 +125,12 @@
       ```html
       <div :style="{color: currentColor, fontSize: fontSize + 'px'}" >
       </div>
-```
-      
+      ```
+
 - style后面跟的是一个对象类型
-      
+  
 - 对象的key是CSS属性名称
-      
+  
 - 对象的value是具体赋的值，值可以来自于data中的属性]
       
       
@@ -278,7 +278,7 @@
 
 <img src="https://i.loli.net/2020/08/05/HPARq2E5SkgnG1o.png" alt="image-20200805090323882" style="zoom:80%;" />
 
-#### 2. v-model:checkbox
+## 2. v-model:checkbox
 
 - 复选框分为两种情况：单个勾选框和多个勾选框
 
@@ -298,9 +298,7 @@
 
 <img src="https://i.loli.net/2020/08/05/rXNdm7sneJ32WUx.png" alt="image-20200805090910699  " style="zoom:80%;" />
 
-
-
-#### 3. v-model:select
+## 3. v-model:select
 
 和checkbox一样，select也分单选和多选两种情况。
 
@@ -320,7 +318,7 @@
 
 <img src="C:\Users\LvRui\AppData\Roaming\Typora\typora-user-images\image-20200805091932167.png" alt="image-20200805091932167" style="zoom:80%;" />
 
-#### 修饰符
+### 修饰符
 
 - lazy修饰符：
   1. 默认情况下，v-model默认是在input事件中同步输入框的数据的。也就是说，一旦有数据发生改变对应的data中的数据就会自动发生改变。  lazy修饰符可以让数据在失去焦点或者回车时才会更新：
