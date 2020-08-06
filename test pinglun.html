@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .msg{
+            width: 200px;
+            height: 300px;
+            border: 1px solid pink;
+            resize:none;
+        }
+        li a{
+            float: right;
+        }
+        
+    </style>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="button" value="发布">
+    <div class="content">
+        <ul>
+            <li>dfd</li>
+            <li>err</li>
+            <li>vvv</li>
+            <li>nnn</li>
+        </ul>
+    </div>
+ 
+    <script>
+       var msg = document.querySelector("textarea");
+       var ul = document.querySelector("ul");
+       var btn = document.querySelector("input");
+       btn.onclick=function(){
+            if(msg.value!=""){
+              var li = document.createElement("li");
+              var a = document.createElement("a");
+              a.innerHTML="删除"
+              ul.insertBefore(li, ul.children[0]);
+              li.innerHTML=msg.value+"<a href='#'>删除</a>";   
+            }else{
+                alert("null")
+                return;
+            }
+       var as = document.querySelectorAll("a");
+       for(var i=0; i<as.length;i++){
+           as[i].onclick = function(){
+               ul.removeChild(this.parentNode);
+           }
+       }
+     
+       }
+        
+    </script>
+</body>
+</html>

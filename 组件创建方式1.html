@@ -8,18 +8,33 @@
 </head>
 <body>
    <div id="app">
-    <my-com1></my-com1>
+    <!-- <my-com1></my-com1> -->
+    <!-- <mycon></mycon> -->
+    <template id="ddd">
+        <div>
+            <h3>我是组件</h3>
+        </div>
+    </template>
+
    </div>
     <script>
-        var com1 = Vue.extend({
-            template:"<h3>这是一个使用VUE.extend创建的h3</h3>"
-        })
-        Vue.component("myCom1", com1)
+        // const ddd = Vue.extend({
+        //     template:"<div>我是组件</div>"
+        // })
+        // Vue.component("my-con", ddd)
+        // var com1 = Vue.extend({
+        //     template:"<h3>这是一个使用VUE.extend创建的h3</h3>"
+        // })
+        // Vue.component("myCom1", com1)
         var vm = new Vue({
             el:"#app",
             data:{
 
-            }
+            },
+            components:{
+                mycon:ddd
+            },
+            
         })
     </script>
 </body>

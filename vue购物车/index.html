@@ -9,6 +9,7 @@
 <body>
 <div id="app">
 
+  <div v-if="books.length">
     <table>
         <thead>
             <tr>
@@ -21,20 +22,26 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="item in books">
-                <td>item.id</td>
-                <td>item.name</td>
-
-               
-                
+            <tr v-for="item, index in books">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.price | showPrice}}</td>
+                <td>
+                    <button @click="increase(index)">+</button>
+                    {{item.count}}
+                    <button @click="decrease(index)" v-bind:disabled="item.count<=1">-</button> 
+                </td>
+                <td>
+                    <button @click="remove(index)">删除</button>
+                </td>
             </tr>
         </tbody>
     </table>
-
-
+  </div>
+<h2 v-else>购物车为空</h2>
+<h2>总价格{{totalPrice}}</h2>
 </div>
-
-
 
     <script src="./js/vue-2.4.0.js"></script>
     <script src="./js/index.js"></script>

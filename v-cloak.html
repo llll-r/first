@@ -36,8 +36,8 @@
                 mytitle:"这是自己定义的一个title"
             },
             methods:{
-                show: function() {
-                    alert("你好")
+                show: function(event) {
+                    console.log(event.target.value);
                 }
             }
         })

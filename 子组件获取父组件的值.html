@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <tmp :cinfo="info"></tmp>
+    </div>
+    <template id="tmp">
+        <div>
+            <h3 @click="infotopa()">dddd</h3>
+        </div>
+    </template>
+<script src="./lib/vue-2.4.0.js"></script>
+<script>
+    const tmp = {
+        template :"#tmp",
+      
+        props:{
+            cinfo:{
+                type:Object,
+                default(){
+                    return {}
+                }
+            }
+        },
+        methods:{
+            infotopa(){
+                this.$emit("toinfo", )
+            }
+        }
+        
+
+        
+    }
+    const vm = new Vue({
+        el:"#app",
+        data:{
+                info:{
+                    name:"ddd",
+                    age:13
+                }
+        },
+        components:{
+            tmp
+        },
+        methods:{
+
+        }
+    })
+
+
+</script>
+</body>
+</html>

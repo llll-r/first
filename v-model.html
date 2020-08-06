@@ -7,8 +7,11 @@
 </head>
 <body>
     <div id="app">
-        <p>{{msg}}</p>
-        <input type="text" name="" id="" v-model=msg>
+        <!-- <p>{{msg}}</p> -->
+        <!-- <input type="text" name="" id="" v-model=msg> -->
+        <input type="radio" name="sex" id="" v-model="sex">男
+        <input type="radio" name="sex" id="" v-model="sex">女
+
     </div>
 
 
@@ -18,6 +21,7 @@
             el:"#app",
             data:{
                 msg:"我是谁啊啊啊",
+                sex:""
                
             },
             methods:{
