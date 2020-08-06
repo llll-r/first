@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./lib/vue-2.4.0.js"></script>
+    <script src="../lib/vue-2.4.0.js"></script>
 </head>
 <body>
    <div id="app">
-    <mycom1></mycom1>
+        <mycon></mycon>
    </div>
     <script>
-
-        Vue.component("mycom1", {
-            template:"<h3>这是使用vue.component直接创建的组件</h3>"
+       var cpn = Vue.extend({
+           template: "<div><h3>我是组件</h3></div>"
         })
         var vm = new Vue({
             el:"#app",
             data:{
-
-            }
+            },
+            // 创建的局部组件
+            components:{
+                mycon:cpn
+            },
+            
         })
     </script>
 </body>
