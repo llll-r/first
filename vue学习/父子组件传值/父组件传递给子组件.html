@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../lib/vue-2.4.0.js"></script>
 </head>
 <body>
     <div id="app">
-        <tmp :cinfo="info"></tmp>
+      <tmp :cinfo="info"></tmp>
     </div>
     <template id="tmp">
         <div>
-            <h3 @click="infotopa()">dddd</h3>
+            <h3>这是父组件传过来的值：{{cinfo}}</h3>
         </div>
     </template>
-<script src="./lib/vue-2.4.0.js"></script>
 <script>
     const tmp = {
-        template :"#tmp",
-      
+        template :"#tmp",      
         props:{
             cinfo:{
                 type:Object,
@@ -27,15 +26,8 @@
                 }
             }
         },
-        methods:{
-            infotopa(){
-                this.$emit("toinfo", )
-            }
         }
         
-
-        
-    }
     const vm = new Vue({
         el:"#app",
         data:{
